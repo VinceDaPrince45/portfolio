@@ -66,7 +66,7 @@ h1 {
 .projects {
     display:flex;
     flex-direction: column;
-    gap:3em;
+    gap:10em;
 }
 
 .view > .header {
@@ -77,6 +77,35 @@ h1 {
 .project {
     display:flex;
     justify-content: center;
+    width:60%;
+    position:relative;
+    align-self: center;
+    border:2px solid grey;
+}
+
+.project:nth-child(even) > picture {
+    position:relative;
+    top:-50px;
+    left:-150px;
+    opacity:1;
+}
+
+.project:nth-child(odd) > picture {
+    position:relative;
+    top:-50px;
+    left:20%;
+}
+
+.project:nth-child(even) > .view {
+    position:absolute;
+    top:40%;
+    right:-10%;
+}
+
+.project:nth-child(odd) > .view {
+    position:absolute;
+    top:40%;
+    left:-20%;
 }
 
 .view {
@@ -95,4 +124,34 @@ h1 {
 
 .image {
     height:10px;
+}
+
+/* title animation when website loads */
+
+@keyframes fromLeft {
+    from {
+        left:-100%;
+    }
+    to {
+        left:0%;
+    }
+}
+
+@keyframes fromRight {
+    from {
+        right:-100%;
+    }
+    to {
+        right:0%;
+    }
+}
+
+.firstname {
+    position:relative;
+    animation: 2s fromLeft 1 alternate;
+}
+
+.lastname {
+    position:relative;
+    animation: 2s fromRight 1 alternate;
 }
