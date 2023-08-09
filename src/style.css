@@ -1,6 +1,7 @@
 html {
     background-color: rgb(36,36,36);
     color:white;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
     margin-bottom:0.5em;
 }
 
-.introduction, .projects {
+.introduction, .projects, .contact {
     padding:3em;
     border-top:2px solid white;
     margin-left:3em;
@@ -31,6 +32,9 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
+    margin-left:2em;
+    margin-right:2em;
+    color:grey;
 }
 
 header > ul {
@@ -39,25 +43,54 @@ header > ul {
     list-style-type: none;
 }
 
+header > ul > li {
+    transition: color 0.5s ease-out 0s;
+}
+
+header > ul > li:hover {
+    color:white;
+}
+
 
 /* Name */
 
 .name {
-    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-h1 {
-    font-size: 10em;
-    transform: scaleY(2);
+.name > div {
+    display:flex;
+    justify-content: center;
+    gap:1em;
 }
 
-.lastname {
-    text-align: right;
-    margin-top: -0.5em;
+.firstrow > .lastname {
+    -webkit-text-stroke: 2px white;
+    color:rgb(36,36,36);
 }
+
+.secondrow > .firstname {
+    -webkit-text-stroke: 2px white;
+    color:rgb(36,36,36); 
+}
+
+.firstname, .lastname {
+    font-size:7em;
+    transform: scaleY(1.5);
+}
+
+.firstrow > h1 {
+    margin-bottom:-1em;
+}
+
 
 /* maybe animate first name sliding in from right and last name sliding in from left */
 
+.projects > .title {
+    margin-bottom:-1em;
+}
 
 /* introduction */
 
@@ -85,6 +118,7 @@ h1 {
     position:relative;
     align-self: center;
     border:2px solid grey;
+    border-radius:5px;
 }
 
 .project:nth-child(even) > picture {
@@ -112,6 +146,14 @@ h1 {
     left:-20%;
 }
 
+.project > picture {
+    filter: brightness(75%);
+}
+
+img {
+    border-radius:5px;
+}
+
 .view {
     width:40%;
     height:auto;
@@ -121,10 +163,6 @@ h1 {
 }
 
 /* scroll into breakpoint and project details appear */
-
-.contact {
-    height:100vh;
-}
 
 .image {
     height:10px;
