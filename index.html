@@ -9,18 +9,33 @@
 </head>
 <body>
     <header>
-        <div>Icon</div>
+        <div>VN</div>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            <li onClick="document.querySelector('.introduction').scrollIntoView()">About</li>
+            <li onClick="document.querySelector('.projects').scrollIntoView()">Projects</li>
+            <li onClick="document.querySelector('.contact').scrollIntoView()">Contact</li>
         </ul>
     </header>
 
     <div class="name">
-        <h1 class="firstname">VINCENT</h1>
-        <h1 class="lastname">NGUYEN</h1>
+        <div class="firstrow">
+            <h1 class="firstname">
+                VINCENT
+            </h1>
+            <h1 class="lastname">
+                &nbsp;
+                <br>
+                NGUYEN
+            </h1>
+        </div>
+        <div class="secondrow">
+            <h1 class="firstname">NGUYEN</h1>
+            <h1 class="lastname">
+                &nbsp;
+                <br>
+                VINCENT
+            </h1>
+        </div>
     </div>
 
     <div class="introduction revealUp">
@@ -135,8 +150,14 @@
         <div class="view-more"></div>
     </div>
 
+    <div class="skil">
+        <!-- add carousel -->
+    </div>
+
     <div class="contact">
-        <div>Contact</div>
+        <div class="container">
+            <div class="title">Contact</div>
+        </div>
 
     </div>
 </body>
