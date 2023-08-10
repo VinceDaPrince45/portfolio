@@ -2,6 +2,11 @@ html {
     background-color: rgb(36,36,36);
     color:white;
     scroll-behavior: smooth;
+    width:100vw;
+}
+
+* {
+    word-break: break-word;
 }
 
 body {
@@ -41,6 +46,7 @@ header > ul {
     display:flex;
     gap:1em;
     list-style-type: none;
+    cursor:pointer;
 }
 
 header > ul > li {
@@ -114,7 +120,6 @@ header > ul > li:hover {
 .project {
     display:flex;
     justify-content: center;
-    width:60%;
     position:relative;
     align-self: center;
     border:2px solid grey;
@@ -122,28 +127,15 @@ header > ul > li:hover {
 }
 
 .project:nth-child(even) > picture {
-    position:relative;
-    top:-50px;
-    left:-150px;
-    opacity:1;
 }
 
 .project:nth-child(odd) > picture {
-    position:relative;
-    top:-50px;
-    left:20%;
 }
 
 .project:nth-child(even) > .view {
-    position:absolute;
-    top:40%;
-    right:-10%;
 }
 
 .project:nth-child(odd) > .view {
-    position:absolute;
-    top:40%;
-    left:-20%;
 }
 
 .project > picture {
@@ -151,26 +143,28 @@ header > ul > li:hover {
 }
 
 img {
-    border-radius:5px;
 }
 
 .view {
-    width:40%;
-    height:auto;
     background-color: #151515;
     border-radius:5px;
     padding:2em;
 }
 
 .view > .header {
-    position:absolute;
     background-color:#36454f;
     color:white;
     text-align: center;
     padding:0.5em;
     margin:0;
-    transform:translate(0,-150%)
 }
+
+.view > .description {
+    padding-bottom:1em;
+    border-bottom: 2px solid white;
+    margin-bottom:1em;
+}
+
 
 /* scroll into breakpoint and project details appear */
 
@@ -206,4 +200,25 @@ img {
 .lastname {
     position:relative;
     animation: 2s fromRight 1 alternate;
+}
+
+/* for phones */
+
+@media (max-width:1000px) {
+    html,body {
+        width:100vw;
+        word-break: break-all;
+    }
+
+    .projects > .project {
+        display:flex;
+        flex-direction:column;
+    }
+
+    .name {
+        margin:0;
+        padding:0;
+        width:100vw;
+        height:auto;
+    }
 }
