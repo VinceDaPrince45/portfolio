@@ -217,6 +217,10 @@ header > ul > li:hover {
     animation: 2s fromRight 1 alternate;
 }
 
+.contact {
+    height:60vh;
+}
+
 @media (min-width:1001px) {
     .decoration {
         height:100%;
@@ -266,7 +270,7 @@ header > ul > li:hover {
         margin:0;
     }
 
-    .projects {
+    .projects,.contact {
         max-width: 100%;
         padding:0;
     }
@@ -328,5 +332,8 @@ header > ul > li:hover {
         margin-bottom:-15vh;
     }
 
-    
+    .contact {
+        padding-top:3vh;
+    }
+
 }
