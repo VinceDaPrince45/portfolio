@@ -11,6 +11,10 @@ gsap.utils.toArray(".revealUp").forEach(function (elem) {
     end: "bottom 20%",
     markers: false,
     onEnter: function () {
+      if (elem.classList.contains('project')) {
+        elem.children[1].children[0].style.border = 'none';
+        elem.children[1].children[0].style.border = '20px solid grey';
+      }
       gsap.fromTo(
         elem,
         { y: 100, autoAlpha: 0 },
@@ -19,14 +23,20 @@ gsap.utils.toArray(".revealUp").forEach(function (elem) {
           y: 0,
           autoAlpha: 1,
           ease: "back",
-          overwrite: "auto"
+          overwrite: "auto",
         }
       );
     },
     onLeave: function () {
+      if (elem.classList.contains('project')) {
+        elem.children[1].children[0].style.border = 'none'
+      }
       gsap.fromTo(elem, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
     },
     onEnterBack: function () {
+      if (elem.classList.contains('project')) {
+        elem.children[1].children[0].style.border = '20px solid grey';
+      }
       gsap.fromTo(
         elem,
         { y: -100, autoAlpha: 0 },
@@ -44,3 +54,4 @@ gsap.utils.toArray(".revealUp").forEach(function (elem) {
     }
   });
 });
+

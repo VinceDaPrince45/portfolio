@@ -146,7 +146,6 @@ header > ul > li:hover {
     justify-content: center;
     position:relative;
     align-self: center;
-    border:2px solid grey;
     border-radius:5px;
 }
 
@@ -155,9 +154,13 @@ header > ul > li:hover {
 }
 
 .view {
-    background-color: #151515;
     border-radius:5px;
     padding:2em;
+    background-color: rgb(36,36,36);
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    position:relative;
 }
 
 .view > .header {
@@ -169,19 +172,22 @@ header > ul > li:hover {
 }
 
 .view > .description {
-    padding-bottom:1em;
+    padding:1em;
     border-bottom: 2px solid white;
-    margin-bottom:1em;
 }
 
-
-/* scroll into breakpoint and project details appear */
-
-.image {
-    height:10px;
+.technologies {
+    padding:1em;
 }
 
-/* title animation when website loads */
+.view > .header, .view > .description, .view > .technologies, picture {
+    z-index:1;
+}
+
+.view > .description, .view > .technologies {
+    background-color: rgb(36,36,36);
+}
+
 
 @keyframes fromLeft {
     from {
@@ -211,7 +217,35 @@ header > ul > li:hover {
     animation: 2s fromRight 1 alternate;
 }
 
-/* for phones */
+@media (min-width:1001px) {
+    .decoration {
+        height:100%;
+        width:100%;
+        margin:auto;
+        left:0;
+        right:0;
+        position:absolute;
+        transition: border 1s ease-in 0s;
+    }   
+    .project:nth-child(even) > .view > .decoration {
+        transform:rotate(5deg) translate(-50%,10%)
+    }
+    
+    .project:nth-child(odd) > .view > .decoration {
+        transform:rotate(-5deg) translate(-50%)
+    }
+    
+    .project:nth-child(even) > picture {
+        transform:rotate(-5deg);
+    }
+    
+    .project:nth-child(odd) > picture {
+        transform:rotate(5deg);
+    }
+    img { 
+        max-width:50vw;
+    }
+}
 
 @media (max-width:1000px) {
     html,body {
@@ -232,10 +266,19 @@ header > ul > li:hover {
         margin:0;
     }
 
+    .projects {
+        max-width: 100%;
+        padding:0;
+    }
+
     .name {
         display:flex;
         flex-direction: column;
-        font-size:7vw;
+        margin:0;
+        font-size:10vw;
+        transform: scale(1.5);
+        height:90vh;
+        margin-bottom:10vh;
         justify-content: center;
         align-items: center;
     }
@@ -243,4 +286,47 @@ header > ul > li:hover {
     .introduction {
         margin:0;
     }
+
+    .view {
+        position:relative;
+        width:100%;
+        padding:0;
+    }
+
+    img {
+        width:100%;
+    }
+
+    .decoration {
+        height:100%;
+        width:100%;
+        margin:auto;
+        left:0;
+        right:0;
+        position:absolute;
+        transition: border 1s ease-in 0s;
+    }
+
+    .project:nth-child(even) > .view > .decoration {
+        transform:rotate(5deg) translate(-10%,-50%);
+    }
+    
+    .project:nth-child(odd) > .view > .decoration {
+        transform:rotate(-5deg) translate(-10%,-50%);
+    }
+
+    .title {
+        font-size:8vw;
+    }
+
+    .introduction > .paragraph {
+        font-size: 1.2em;
+    }
+
+    .projects > .title {
+        margin-top:5vh;
+        margin-bottom:-15vh;
+    }
+
+    
 }
