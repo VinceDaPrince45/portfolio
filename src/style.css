@@ -49,8 +49,7 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    margin-left:2em;
-    margin-right:2em;
+    margin:2em;
     color:grey;
 }
 header > ul {
@@ -308,7 +307,6 @@ header > ul > li:hover {
     }
 
     body {
-        position:absolute;
         display:flex;
         flex-direction: column;
         align-items: center;
@@ -328,14 +326,19 @@ header > ul > li:hover {
         display:flex;
         flex-direction: column;
         font-size:10vw;
-        transform: scale(1.5);
-        height:90vh;
-        margin-bottom:10vh;
+        margin:0;
+        height:80vh;
         justify-content: center;
         align-items: center;
+        gap:1em;
     }
 
-    .name,.introduction,.projects,.contact {
+    .firstname,.lastname {
+        transform:scale(1.5);
+        height:auto;
+    }
+
+    .introduction,.projects,.contact {
         margin:8%;
         padding:0;
     }
