@@ -126,6 +126,14 @@ header > ul > li:hover {
     margin-bottom:-1em;
 }
 
+.project img {
+    transition: .5s ease;
+    }
+    
+.project img:hover{
+    box-shadow: 0 0 0 10px white;
+    transition: .5s ease;
+}
 
 /* maybe animate first name sliding in from right and last name sliding in from left */
 
