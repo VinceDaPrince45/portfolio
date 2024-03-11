@@ -271,7 +271,8 @@ header > ul > li:hover {
     
     .project:nth-child(odd) > picture {
         transform:rotate(5deg);
-    }
+    }   
+
     img { 
         max-width:50vw;
     }
