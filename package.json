@@ -14,10 +14,12 @@
   "devDependencies": {
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.3",
-    "webpack": "^5.88.2",
+    "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "gsap": "^3.12.2"
-  }
+    "gsap": "^3.12.2",
+    "lodash": "^4.17.21"
+  },
+  "main": "webpack.config.js"
 }
